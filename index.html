@@ -1,41 +1,376 @@
+```html
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khaled Mahjoub - Portfolio</title>
+    <title>Khaled Mahjoub | Portfolio & CV</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#060B19',
+                            800: '#0A1128',
+                            700: '#101B3B',
+                            600: '#1C2B54',
+                        },
+                        gold: {
+                            400: '#F3E5AB',
+                            500: '#D4AF37',
+                            600: '#C5A059',
+                            700: '#A37F35',
+                        },
+                        cream: '#FAF8F5'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        body { font-family: Arial, sans-serif; background-color: #fcfbf9; color: #1a1a1a; margin: 0; padding: 20px; line-height: 1.6; }
-        .header { background-color: #0d1b2a; color: white; padding: 30px 20px; text-align: center; border-radius: 8px; }
-        .header h1 { margin: 0; font-size: 28px; }
-        .section { background: white; margin: 20px 0; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        h2 { color: #1b263b; border-bottom: 2px solid #e0e0e0; padding-bottom: 5px; }
-        .info-list p { margin: 8px 0; }
-        .btn { display: inline-block; background-color: #c5a059; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 10px; }
+        /* Custom styles & Glassmorphism */
+        body {
+            background-color: #060B19;
+            color: #E2E8F0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(28, 43, 84, 0.3) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF 0%, #D4AF37 50%, #C5A059 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-border-gradient {
+            border-image: linear-gradient(to bottom right, #D4AF37, rgba(212, 175, 55, 0.2)) 1;
+        }
+
+        .glass-card {
+            background: rgba(16, 27, 59, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .glass-card-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card-hover:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.1);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #C5A059 100%);
+            color: #060B19;
+            transition: all 0.3s ease;
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 100%);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .glow-avatar {
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.2);
+        }
     </style>
 </head>
-<body>
+<body class="min-h-screen antialiased selection:bg-gold-500 selection:text-navy-900">
 
-    <div class="header">
-        <h1>Khaled Mahjoub</h1>
-        <p>Portfolio & CV en ligne</p>
-    </div>
+    <!-- Navigation Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-card bg-opacity-80 border-b border-white/5 py-4 px-6 md:px-12 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="#" class="font-serif text-2xl font-bold tracking-wider text-white">
+                Khaled <span class="text-gold-500">Mahjoub</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+                <a href="#about" class="hover:text-gold-500 transition-colors">À PROPOS</a>
+                <a href="#skills" class="hover:text-gold-500 transition-colors">COMPÉTENCES</a>
+                <a href="#projects" class="hover:text-gold-500 transition-colors">EXPÉRIENCES</a>
+                <a href="#contact" class="hover:text-gold-500 transition-colors">CONTACT</a>
+            </div>
 
-    <div class="section">
-        <h2>01. À Propos</h2>
-        <p>Bienvenue sur mon portfolio. Je suis passionné par mon domaine d'activité et actuellement disponible pour de nouvelles opportunités professionnelles.</p>
-        <a href="mailto:votre.email@gmail.com" class="btn">ME CONTACTER →</a>
-    </div>
-
-    <div class="section">
-        <h2>Informations de Contact</h2>
-        <div class="info-list">
-            <p><strong>Localisation :</strong> Tunisie</p>
-            <p><strong>Email :</strong> votre.email@gmail.com</p>
-            <p><strong>Téléphone :</strong> +216 XX XXX XXX</p>
-            <p><strong>Disponibilité :</strong> Ouvert aux opportunités</p>
+            <a href="#contact" class="btn-gold text-xs uppercase tracking-widest font-semibold px-5 py-2.5 rounded-full">
+                Contact
+            </a>
         </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 pt-28 pb-20 space-y-24">
+
+        <!-- HERO SECTION -->
+        <section class="flex flex-col md:flex-row items-center justify-between gap-12 pt-8">
+            <div class="w-full md:w-3/5 space-y-6 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card border border-gold-500/30 text-gold-400 text-xs tracking-widest uppercase font-medium">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Disponible pour opportunités
+                </div>
+                
+                <h1 class="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-white leading-tight">
+                    Khaled <span class="gold-gradient-text">Mahjoub</span>
+                </h1>
+                
+                <p class="text-lg text-slate-300 font-light max-w-xl">
+                    Ingénieur & Spécialiste passionné par l'innovation, la conception technique et la gestion de projets d'excellence.
+                </p>
+
+                <!-- Key Metrics Grid -->
+                <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/10">
+                    <div class="glass-card p-4 rounded-xl text-center">
+                        <span class="font-serif text-2xl sm:text-3xl font-bold text-gold-500 block">3+</span>
+                        <span class="text-xs text-slate-400 uppercase tracking-wider">Ans d'expérience</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl text-center">
+                        <span class="font-serif text-2xl sm:text-3xl font-bold text-gold-500 block">5+</span>
+                        <span class="text-xs text-slate-400 uppercase tracking-wider">Projets Réalisés</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl text-center">
+                        <span class="font-serif text-2xl sm:text-3xl font-bold text-gold-500 block">100%</span>
+                        <span class="text-xs text-slate-400 uppercase tracking-wider">Engagement</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-4">
+                    <a href="#contact" class="btn-gold font-semibold text-sm tracking-wider uppercase px-7 py-3.5 rounded-xl flex items-center gap-2">
+                        <span>Me Contacter</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="#" onclick="alert('Ajoutez le lien vers votre fichier CV PDF')" class="glass-card hover:bg-white/10 text-white font-medium text-sm tracking-wider uppercase px-7 py-3.5 rounded-xl border border-gold-500/30 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-download text-gold-500"></i>
+                        <span>Télécharger CV</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Profile Image Container -->
+            <div class="w-full md:w-2/5 flex justify-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-gold-500 to-gold-700 rounded-2xl blur opacity-30 group-hover:opacity-70 transition duration-1000"></div>
+                    <div class="relative rounded-2xl overflow-hidden glass-card p-3 border border-gold-500/40 glow-avatar max-w-[280px] sm:max-w-[320px]">
+                        <img 
+                            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800" 
+                            alt="Khaled Mahjoub" 
+                            class="w-full h-80 object-cover rounded-xl grayscale group-hover:grayscale-0 transition duration-700"
+                            onerror="this.src='https://placehold.co/400x500/101B3B/D4AF37?text=Khaled+Mahjoub'"
+                        >
+                        <div class="absolute bottom-6 left-6 right-6 p-3 glass-card rounded-lg text-center backdrop-blur-md">
+                            <p class="font-serif font-bold text-white text-base">Khaled Mahjoub</p>
+                            <p class="text-xs text-gold-400 font-medium">Ingénieur / Spécialiste</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 01: À PROPOS -->
+        <section id="about" class="space-y-6">
+            <div class="flex items-center gap-4">
+                <span class="font-serif text-gold-500 text-xl font-bold">01.</span>
+                <h2 class="font-serif text-3xl font-bold text-white tracking-wide">À Propos De Moi</h2>
+                <div class="h-px bg-gradient-to-r from-gold-500/40 to-transparent flex-1"></div>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl space-y-4 border border-white/5 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-5 text-gold-500 pointer-events-none">
+                    <i class="fa-solid fa-quote-right text-9xl"></i>
+                </div>
+                <p class="text-slate-300 leading-relaxed text-base sm:text-lg font-light">
+                    Je suis <strong class="text-white font-semibold">Khaled Mahjoub</strong>, un professionnel rigoureux, passionné par les défis techniques, la conception et la réalisation de projets d'envergure. 
+                </p>
+                <p class="text-slate-300 leading-relaxed text-base font-light">
+                    Fort d'une solide formation et de plusieurs expériences sur le terrain, mon objectif principal est d'apporter des solutions efficaces, durables et innovantes tout en garantissant des standards de qualité élevés.
+                </p>
+                <div class="pt-4 flex flex-wrap gap-3">
+                    <span class="px-3.5 py-1.5 rounded-lg bg-navy-700/60 text-gold-400 text-xs border border-gold-500/20">Esprit d'Analyse</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-navy-700/60 text-gold-400 text-xs border border-gold-500/20">Gestion de Projet</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-navy-700/60 text-gold-400 text-xs border border-gold-500/20">Résolution de Problèmes</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-navy-700/60 text-gold-400 text-xs border border-gold-500/20">Travail d'Équipe</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 02: COMPÉTENCES -->
+        <section id="skills" class="space-y-6">
+            <div class="flex items-center gap-4">
+                <span class="font-serif text-gold-500 text-xl font-bold">02.</span>
+                <h2 class="font-serif text-3xl font-bold text-white tracking-wide">Compétences Techniques</h2>
+                <div class="h-px bg-gradient-to-r from-gold-500/40 to-transparent flex-1"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Skill Card 1 -->
+                <div class="glass-card glass-card-hover p-6 rounded-2xl space-y-3 border border-white/5">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-500 text-xl">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white">Conception & Calculs</h3>
+                    <p class="text-slate-400 text-sm font-light">Élaboration de plans, dimensionnement d'ouvrages et modélisation technique avancée.</p>
+                </div>
+
+                <!-- Skill Card 2 -->
+                <div class="glass-card glass-card-hover p-6 rounded-2xl space-y-3 border border-white/5">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-500 text-xl">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white">Gestion de Chantier / Projets</h3>
+                    <p class="text-slate-400 text-sm font-light">Suivi d'exécution, planification budgétaire, coordination des équipes et des délais.</p>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="glass-card glass-card-hover p-6 rounded-2xl space-y-3 border border-white/5">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-500 text-xl">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white">Logiciels Métiers</h3>
+                    <p class="text-slate-400 text-sm font-light">Maîtrise des logiciels de modélisation (AutoCAD, Robot, MS Project, Office).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 03: EXPÉRIENCES & PARCOURS -->
+        <section id="projects" class="space-y-6">
+            <div class="flex items-center gap-4">
+                <span class="font-serif text-gold-500 text-xl font-bold">03.</span>
+                <h2 class="font-serif text-3xl font-bold text-white tracking-wide">Expériences & Parcours</h2>
+                <div class="h-px bg-gradient-to-r from-gold-500/40 to-transparent flex-1"></div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Timeline Item 1 -->
+                <div class="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl border border-white/5 relative">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold">Projet / Stage PFE</span>
+                            <h3 class="font-serif text-2xl font-bold text-white">Conception & Étude Technique</h3>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-gold-500/10 text-gold-400 text-xs font-medium border border-gold-500/20 w-fit">2023 - Présent</span>
+                    </div>
+                    <p class="text-slate-300 text-sm font-light leading-relaxed">
+                        Réalisation d'études de structure, analyse de durabilité et optimisation de plans techniques. Rédaction de rapports et suivi rigoureux des cahiers des charges.
+                    </p>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl border border-white/5 relative">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold">Stage de Perfectionnement</span>
+                            <h3 class="font-serif text-2xl font-bold text-white">Suivi de Projets sur Chantier</h3>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-gold-500/10 text-gold-400 text-xs font-medium border border-gold-500/20 w-fit">2022</span>
+                    </div>
+                    <p class="text-slate-300 text-sm font-light leading-relaxed">
+                        Supervision des travaux sur le terrain, suivi des étapes d'avancement, contrôle qualité et coordination entre le bureau d'études et les équipes de réalisation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 04: CONTACT -->
+        <section id="contact" class="space-y-6">
+            <div class="flex items-center gap-4">
+                <span class="font-serif text-gold-500 text-xl font-bold">04.</span>
+                <h2 class="font-serif text-3xl font-bold text-white tracking-wide">Informations de Contact</h2>
+                <div class="h-px bg-gradient-to-r from-gold-500/40 to-transparent flex-1"></div>
+            </div>
+
+            <div class="glass-card rounded-2xl overflow-hidden border border-gold-500/20">
+                <div class="divide-y divide-white/5">
+                    
+                    <!-- Contact Row 1 -->
+                    <div class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-white/5 transition-colors">
+                        <span class="text-xs uppercase tracking-widest text-slate-400 font-medium w-40">Localisation</span>
+                        <span class="text-white font-medium flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-gold-500 text-sm"></i>
+                            Sousse, Tunisie
+                        </span>
+                    </div>
+
+                    <!-- Contact Row 2 -->
+                    <div class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-white/5 transition-colors">
+                        <span class="text-xs uppercase tracking-widest text-slate-400 font-medium w-40">Téléphone</span>
+                        <a href="tel:+21600000000" class="text-gold-400 font-medium hover:underline flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-gold-500 text-sm"></i>
+                            +216 XX XXX XXX
+                        </a>
+                    </div>
+
+                    <!-- Contact Row 3 -->
+                    <div class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-white/5 transition-colors">
+                        <span class="text-xs uppercase tracking-widest text-slate-400 font-medium w-40">Email</span>
+                        <a href="mailto:votre.email@gmail.com" class="text-gold-400 font-medium hover:underline flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-gold-500 text-sm"></i>
+                            khaled.mahjoub@gmail.com
+                        </a>
+                    </div>
+
+                    <!-- Contact Row 4 -->
+                    <div class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-white/5 transition-colors">
+                        <span class="text-xs uppercase tracking-widest text-slate-400 font-medium w-40">LinkedIn</span>
+                        <a href="https://linkedin.com" target="_blank" class="text-gold-400 font-medium hover:underline flex items-center gap-2">
+                            <i class="fa-brands fa-linkedin text-gold-500 text-sm"></i>
+                            Profil LinkedIn
+                        </a>
+                    </div>
+
+                    <!-- Contact Row 5 -->
+                    <div class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-white/5 transition-colors">
+                        <span class="text-xs uppercase tracking-widest text-slate-400 font-medium w-40">Langues</span>
+                        <span class="text-white font-medium">Arabe (natif) · Français (courant) · Anglais (professionnel)</span>
+                    </div>
+
+                    <!-- Contact Row 6 -->
+                    <div class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-white/5 transition-colors">
+                        <span class="text-xs uppercase tracking-widest text-slate-400 font-medium w-40">Disponibilité</span>
+                        <span class="inline-flex items-center gap-2 text-emerald-400 font-medium">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                            Ouvert aux opportunités professionnelles
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-8 text-center text-slate-500 text-xs">
+        <p>© 2026 Khaled Mahjoub. Tous droits réservés.</p>
+    </footer>
 
 </body>
 </html>
+```
