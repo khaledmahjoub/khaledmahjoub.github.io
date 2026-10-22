@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#FBF8F3">
-    <title>Khaled Mahjoub | Portfolio & CV</title>
+    <meta name="description" content="Khaled Mahjoub, élève ingénieur en dernière année de génie civil à l'École Polytechnique de Sousse. Calcul de structures (EC2/EC3), BIM et conduite de travaux. Portfolio et CV.">
+    <title>Khaled Mahjoub | Élève ingénieur en génie civil</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,6 +108,11 @@
         .soft-shadow-avatar {
             box-shadow: 0 25px 50px -20px rgba(8, 96, 73, 0.35);
         }
+
+        /* Les sections ne se cachent pas sous la barre de navigation fixe */
+        section[id] {
+            scroll-margin-top: 6rem;
+        }
     </style>
 </head>
 <body class="min-h-screen antialiased selection:bg-jade-600 selection:text-white">
@@ -119,28 +125,30 @@
             </a>
 
             <!-- Menu Desktop -->
-            <div class="hidden md:flex space-x-8 text-xs font-semibold tracking-widest text-ink-600">
+            <div class="hidden lg:flex space-x-7 text-xs font-semibold tracking-widest text-ink-600">
                 <a href="#about" class="hover:text-jade-600 transition-colors">01. À PROPOS</a>
                 <a href="#skills" class="hover:text-jade-600 transition-colors">02. COMPÉTENCES</a>
                 <a href="#experiences" class="hover:text-jade-600 transition-colors">03. PARCOURS</a>
-                <a href="#contact" class="hover:text-jade-600 transition-colors">04. CONTACT</a>
+                <a href="#projects" class="hover:text-jade-600 transition-colors">04. PROJETS</a>
+                <a href="#contact" class="hover:text-jade-600 transition-colors">05. CONTACT</a>
             </div>
 
-            <a href="#contact" class="hidden sm:inline-flex btn-primary text-xs uppercase tracking-widest font-bold px-5 py-2.5 rounded-full">
+            <a href="#contact" class="hidden xl:inline-flex btn-primary text-xs uppercase tracking-widest font-bold px-5 py-2.5 rounded-full">
                 Me Contacter
             </a>
 
             <!-- Bouton Menu Mobile -->
-            <button id="mobile-menu-btn" class="md:hidden text-jade-600 text-xl focus:outline-none" aria-label="Ouvrir le menu">
+            <button id="mobile-menu-btn" class="lg:hidden text-jade-600 text-xl focus:outline-none" aria-label="Ouvrir le menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
         <!-- Menu Mobile Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-ink-900/10 flex flex-col space-y-3 text-center text-sm text-ink-800">
+        <div id="mobile-menu" class="hidden lg:hidden mt-4 pt-4 border-t border-ink-900/10 flex flex-col space-y-3 text-center text-sm text-ink-800">
             <a href="#about" class="py-2 hover:text-jade-600">À Propos</a>
             <a href="#skills" class="py-2 hover:text-jade-600">Compétences</a>
             <a href="#experiences" class="py-2 hover:text-jade-600">Parcours</a>
+            <a href="#projects" class="py-2 hover:text-jade-600">Projets</a>
             <a href="#contact" class="py-2 hover:text-jade-600">Contact</a>
         </div>
     </nav>
@@ -153,31 +161,32 @@
             <div class="w-full md:w-3/5 space-y-6 text-center md:text-left">
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full card border border-jade-600/25 text-jade-700 text-xs tracking-widest uppercase font-medium">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    Disponible pour opportunités
+                    Recherche un PFE · Février 2027
                 </div>
 
                 <h1 class="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-ink-900 leading-tight">
                     Khaled <span class="accent-gradient-text">Mahjoub</span>
                 </h1>
 
-                <!-- MODIFIER ICI : Votre Titre / Spécialité -->
-                <p class="text-lg text-ink-600 font-light max-w-xl leading-relaxed">
-                    Ingénieur & Spécialiste passionné par la conception technique, le développement stratégique et la gestion de projets d'excellence.
+                <p class="font-serif text-2xl text-jade-700 italic">Élève ingénieur en génie civil · Dernière année</p>
+
+                <p class="text-lg text-ink-600 font-light max-w-xl leading-relaxed mx-auto md:mx-0">
+                    Élève ingénieur en dernière année à l'École Polytechnique de Sousse. Passionné par le calcul des structures (EC2/EC3) et le BIM, je prépare mon projet de fin d'études.
                 </p>
 
-                <!-- STATISTIQUES (Chiffres clés) -->
+                <!-- CHIFFRES CLÉS -->
                 <div class="grid grid-cols-3 gap-4 pt-4 border-t border-ink-900/10">
                     <div class="card p-4 rounded-xl text-center">
-                        <span class="font-serif text-2xl sm:text-3xl font-bold text-jade-600 block">3+</span>
-                        <span class="text-[10px] sm:text-xs text-ink-500 uppercase tracking-wider">Ans d'expérience</span>
+                        <span class="font-serif text-2xl sm:text-3xl font-bold text-jade-600 block">2</span>
+                        <span class="text-[10px] sm:text-xs text-ink-500 uppercase tracking-wider">Stages</span>
                     </div>
                     <div class="card p-4 rounded-xl text-center">
-                        <span class="font-serif text-2xl sm:text-3xl font-bold text-jade-600 block">10+</span>
-                        <span class="text-[10px] sm:text-xs text-ink-500 uppercase tracking-wider">Projets Réalisés</span>
+                        <span class="font-serif text-2xl sm:text-3xl font-bold text-jade-600 block">3</span>
+                        <span class="text-[10px] sm:text-xs text-ink-500 uppercase tracking-wider">Projets</span>
                     </div>
                     <div class="card p-4 rounded-xl text-center">
-                        <span class="font-serif text-2xl sm:text-3xl font-bold text-jade-600 block">100%</span>
-                        <span class="text-[10px] sm:text-xs text-ink-500 uppercase tracking-wider">Engagement</span>
+                        <span class="font-serif text-2xl sm:text-3xl font-bold text-jade-600 block">3</span>
+                        <span class="text-[10px] sm:text-xs text-ink-500 uppercase tracking-wider">Langues</span>
                     </div>
                 </div>
 
@@ -186,8 +195,8 @@
                         <span>Me Contacter</span>
                         <i class="fa-solid fa-arrow-right text-xs"></i>
                     </a>
-                    <!-- MODIFIER ICI : Remplacez # par le lien vers votre fichier CV (PDF) -->
-                    <a href="#" onclick="alert('Pensez à ajouter votre fichier CV dans votre dépôt GitHub !')" class="card hover:bg-white text-ink-900 font-medium text-xs tracking-widest uppercase px-7 py-3.5 rounded-xl border border-jade-600/30 transition-all flex items-center gap-2">
+                    <!-- Placez le fichier PDF à côté de index.html avec ce nom exact -->
+                    <a href="CV-Khaled-Mahjoub.pdf" target="_blank" rel="noopener" download class="card hover:bg-white text-ink-900 font-medium text-xs tracking-widest uppercase px-7 py-3.5 rounded-xl border border-jade-600/30 transition-all flex items-center gap-2">
                         <i class="fa-solid fa-download text-jade-600"></i>
                         <span>Télécharger CV</span>
                     </a>
@@ -198,18 +207,20 @@
             <div class="w-full md:w-2/5 flex justify-center">
                 <div class="relative group">
                     <div class="absolute -inset-1 bg-gradient-to-r from-jade-500 to-clay-400 rounded-2xl blur opacity-30 group-hover:opacity-55 transition duration-700"></div>
-                    <div class="relative rounded-2xl overflow-hidden card p-3 border border-jade-600/30 soft-shadow-avatar max-w-[280px] sm:max-w-[320px]">
-                        <!-- MODIFIER ICI : Remplacez ce lien par votre photo -->
-                        <img
-                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
-                            alt="Khaled Mahjoub"
-                            class="w-full h-80 object-cover rounded-xl transition duration-700"
-                            onerror="this.src='https://placehold.co/400x500/E9E1D2/0B7A5E?text=Khaled+Mahjoub'"
-                        >
+                    <div class="relative rounded-2xl overflow-hidden card p-3 border border-jade-600/30 soft-shadow-avatar w-[280px] sm:w-[320px]">
+                        <!-- Votre photo : enregistrez-la dans le dossier images/ sous le nom khaled.jpg -->
+                        <div class="relative w-full h-80 rounded-xl overflow-hidden bg-gradient-to-br from-cream-200 to-cream-100">
+                            <div class="absolute inset-0 flex items-center justify-center font-serif text-7xl font-bold text-jade-600/40">KM</div>
+                            <img
+                                src="images/khaled.jpg"
+                                alt="Khaled Mahjoub"
+                                class="absolute inset-0 w-full h-full object-cover"
+                                onerror="this.remove()"
+                            >
+                        </div>
                         <div class="absolute bottom-6 left-6 right-6 p-3 bg-white/85 border border-ink-900/5 rounded-lg text-center backdrop-blur-md">
                             <p class="font-serif font-bold text-ink-900 text-base">Khaled Mahjoub</p>
-                            <!-- MODIFIER ICI : Votre domaine -->
-                            <p class="text-xs text-jade-600 font-medium">Spécialiste & Ingénieur</p>
+                            <p class="text-xs text-jade-600 font-medium">Élève ingénieur · Dernière année</p>
                         </div>
                     </div>
                 </div>
@@ -228,20 +239,18 @@
                 <div class="absolute top-0 right-0 p-8 opacity-[0.06] text-jade-600 pointer-events-none">
                     <i class="fa-solid fa-quote-right text-9xl"></i>
                 </div>
-                <!-- MODIFIER ICI : Vos textes de présentation -->
                 <p class="text-ink-600 leading-relaxed text-base sm:text-lg font-light">
-                    Je suis <strong class="text-ink-900 font-semibold">Khaled Mahjoub</strong>, un professionnel passionné par les solutions techniques innovantes, la rigueur opérationnelle et la réussite collective.
+                    Élève-ingénieur en dernière année de Génie Civil à l'<strong class="text-ink-900 font-semibold">École Polytechnique de Sousse</strong>, je suis passionné par le calcul des structures (EC2/EC3) et le BIM.
                 </p>
                 <p class="text-ink-600 leading-relaxed text-base font-light">
-                    Fort d'un parcours académique solide et d'expériences pratiques concrètes, je m'efforce d'allier expertise technique et vision stratégique pour mener à bien des projets ambitieux.
+                    Après des stages en bureau d'études et sur chantier (Revit, Robot, Tekla), je recherche un <strong class="text-ink-900 font-semibold">PFE de 4 à 6 mois (février 2027)</strong> en études de structures ou conduite de travaux. Rigoureux et motivé.
                 </p>
 
-                <!-- MOYENS / POINTS FORTS -->
                 <div class="pt-4 flex flex-wrap gap-2.5">
-                    <span class="px-3.5 py-1.5 rounded-lg bg-jade-600/10 text-jade-700 text-xs font-medium border border-jade-600/20">Esprit d'Analyse</span>
-                    <span class="px-3.5 py-1.5 rounded-lg bg-jade-600/10 text-jade-700 text-xs font-medium border border-jade-600/20">Gestion de Projet</span>
-                    <span class="px-3.5 py-1.5 rounded-lg bg-jade-600/10 text-jade-700 text-xs font-medium border border-jade-600/20">Résolution de Problèmes</span>
-                    <span class="px-3.5 py-1.5 rounded-lg bg-jade-600/10 text-jade-700 text-xs font-medium border border-jade-600/20">Rigueur & Qualité</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-jade-600/10 text-jade-700 text-xs font-medium border border-jade-600/20">Calcul de structures</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-jade-600/10 text-jade-700 text-xs font-medium border border-jade-600/20">BIM</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-jade-600/10 text-jade-700 text-xs font-medium border border-jade-600/20">Conduite de travaux</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-jade-600/10 text-jade-700 text-xs font-medium border border-jade-600/20">Rigueur & Motivation</span>
                 </div>
             </div>
         </section>
@@ -255,151 +264,77 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Carte Compétence 1 -->
                 <div class="card card-hover p-6 rounded-2xl space-y-3">
                     <div class="w-12 h-12 rounded-xl bg-jade-600/10 flex items-center justify-center text-jade-600 text-xl">
-                        <i class="fa-solid fa-pen-ruler"></i>
+                        <i class="fa-solid fa-building"></i>
                     </div>
-                    <h3 class="font-serif text-xl font-bold text-ink-900">Conception & Études</h3>
-                    <p class="text-ink-600 text-sm font-light">Élaboration de plans, modélisation technique et optimisation des solutions.</p>
+                    <h3 class="font-serif text-xl font-bold text-ink-900">Calcul de structures</h3>
+                    <p class="text-ink-600 text-sm font-light">Descentes de charges, ferraillage des éléments porteurs, dimensionnement selon l'Eurocode 2 et l'Eurocode 3, vérification des profilés et des assemblages.</p>
                 </div>
 
-                <!-- Carte Compétence 2 -->
                 <div class="card card-hover p-6 rounded-2xl space-y-3">
                     <div class="w-12 h-12 rounded-xl bg-jade-600/10 flex items-center justify-center text-jade-600 text-xl">
-                        <i class="fa-solid fa-list-check"></i>
+                        <i class="fa-solid fa-cube"></i>
                     </div>
-                    <h3 class="font-serif text-xl font-bold text-ink-900">Gestion de Projet</h3>
-                    <p class="text-ink-600 text-sm font-light">Planification, respect des délais, contrôle qualité et coordination des équipes.</p>
+                    <h3 class="font-serif text-xl font-bold text-ink-900">BIM & Modélisation</h3>
+                    <p class="text-ink-600 text-sm font-light">Conception 3D sous Revit, modélisation sous Robot et Tekla, extraction des plans d'exécution, du BPU et estimation du coût global.</p>
                 </div>
 
-                <!-- Carte Compétence 3 -->
                 <div class="card card-hover p-6 rounded-2xl space-y-3">
                     <div class="w-12 h-12 rounded-xl bg-jade-600/10 flex items-center justify-center text-jade-600 text-xl">
-                        <i class="fa-solid fa-laptop-code"></i>
+                        <i class="fa-solid fa-helmet-safety"></i>
                     </div>
-                    <h3 class="font-serif text-xl font-bold text-ink-900">Outils & Logiciels</h3>
-                    <p class="text-ink-600 text-sm font-light">Maîtrise des logiciels spécialisés du secteur, bureautique et outils informatiques.</p>
+                    <h3 class="font-serif text-xl font-bold text-ink-900">Conduite de travaux</h3>
+                    <p class="text-ink-600 text-sm font-light">Pilotage de projets de construction, contrôle de la qualité, des délais, des coûts et de la sécurité, gestion des matériaux et suivi de l'avancement.</p>
+                </div>
+            </div>
+
+            <!-- Logiciels & Langues -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+                <div class="card p-6 rounded-2xl md:col-span-3 space-y-4">
+                    <h3 class="text-xs uppercase tracking-widest text-ink-500 font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-laptop-code text-jade-600"></i> Logiciels
+                    </h3>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="px-3.5 py-1.5 rounded-lg bg-white text-ink-800 text-xs font-medium border border-ink-900/10">AutoCAD</span>
+                        <span class="px-3.5 py-1.5 rounded-lg bg-white text-ink-800 text-xs font-medium border border-ink-900/10">Autodesk Revit</span>
+                        <span class="px-3.5 py-1.5 rounded-lg bg-white text-ink-800 text-xs font-medium border border-ink-900/10">Robot Structural Analysis</span>
+                        <span class="px-3.5 py-1.5 rounded-lg bg-white text-ink-800 text-xs font-medium border border-ink-900/10">Tekla Structures</span>
+                        <span class="px-3.5 py-1.5 rounded-lg bg-white text-ink-800 text-xs font-medium border border-ink-900/10">Arche Ossature</span>
+                        <span class="px-3.5 py-1.5 rounded-lg bg-white text-ink-800 text-xs font-medium border border-ink-900/10">Pack Microsoft Office</span>
+                        <span class="px-3.5 py-1.5 rounded-lg bg-white text-ink-800 text-xs font-medium border border-ink-900/10">Python</span>
+                    </div>
+                </div>
+
+                <div class="card p-6 rounded-2xl md:col-span-2 space-y-4">
+                    <h3 class="text-xs uppercase tracking-widest text-ink-500 font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-language text-jade-600"></i> Langues
+                    </h3>
+                    <ul class="space-y-2.5 text-sm">
+                        <li class="flex items-center justify-between"><span class="text-ink-900 font-medium">Français</span><span class="text-ink-500 font-light">B2</span></li>
+                        <li class="flex items-center justify-between"><span class="text-ink-900 font-medium">Anglais</span><span class="text-ink-500 font-light">Intermédiaire (B1)</span></li>
+                        <li class="flex items-center justify-between"><span class="text-ink-900 font-medium">Allemand</span><span class="text-ink-500 font-light">Débutant (A1)</span></li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <!-- SECTION 03: PARCOURS & EXPÉRIENCES -->
-        <section id="experiences" class="space-y-6">
+        <section id="experiences" class="space-y-8">
             <div class="flex items-center gap-4">
                 <span class="font-serif text-jade-600 text-xl font-bold">03.</span>
-                <h2 class="font-serif text-3xl font-bold text-ink-900 tracking-wide">Parcours & Expériences</h2>
+                <h2 class="font-serif text-3xl font-bold text-ink-900 tracking-wide">Parcours & Stages</h2>
                 <div class="h-px bg-gradient-to-r from-jade-600/40 to-transparent flex-1"></div>
             </div>
 
+            <!-- Expériences professionnelles -->
             <div class="space-y-6">
-                <!-- Expérience 1 -->
+                <h3 class="text-xs uppercase tracking-widest text-ink-500 font-semibold flex items-center gap-2">
+                    <i class="fa-solid fa-briefcase text-jade-600"></i> Stages
+                </h3>
+
                 <div class="card card-hover p-6 sm:p-8 rounded-2xl">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                         <div>
-                            <span class="text-xs uppercase tracking-widest text-clay-500 font-semibold">Poste / Projet Principal</span>
-                            <!-- MODIFIER ICI -->
-                            <h3 class="font-serif text-2xl font-bold text-ink-900">Ingénieur / Chargé de Mission</h3>
-                        </div>
-                        <span class="px-3 py-1 rounded-full bg-jade-600/10 text-jade-700 text-xs font-medium border border-jade-600/20 w-fit">2023 - Présent</span>
-                    </div>
-                    <!-- MODIFIER ICI -->
-                    <p class="text-ink-600 text-sm font-light leading-relaxed">
-                        Analyse des besoins, suivi d'exécution des tâches complexes et rédaction de rapports de synthèse. Collaboration étroite avec les différents intervenants du projet.
-                    </p>
-                </div>
-
-                <!-- Expérience 2 -->
-                <div class="card card-hover p-6 sm:p-8 rounded-2xl">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-                        <div>
-                            <span class="text-xs uppercase tracking-widest text-clay-500 font-semibold">Stage Professionnel / PFE</span>
-                            <!-- MODIFIER ICI -->
-                            <h3 class="font-serif text-2xl font-bold text-ink-900">Projet de Fin d'Études</h3>
-                        </div>
-                        <span class="px-3 py-1 rounded-full bg-jade-600/10 text-jade-700 text-xs font-medium border border-jade-600/20 w-fit">2022 - 2023</span>
-                    </div>
-                    <!-- MODIFIER ICI -->
-                    <p class="text-ink-600 text-sm font-light leading-relaxed">
-                        Étude technique détaillée, optimisation des procédés et présentation des résultats devant un jury d'experts.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 04: CONTACT -->
-        <section id="contact" class="space-y-6">
-            <div class="flex items-center gap-4">
-                <span class="font-serif text-jade-600 text-xl font-bold">04.</span>
-                <h2 class="font-serif text-3xl font-bold text-ink-900 tracking-wide">Coordonnées de Contact</h2>
-                <div class="h-px bg-gradient-to-r from-jade-600/40 to-transparent flex-1"></div>
-            </div>
-
-            <div class="card rounded-2xl overflow-hidden border border-jade-600/20 divide-y divide-ink-900/5">
-
-                <!-- Localisation -->
-                <div class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-jade-600/5 transition-colors">
-                    <span class="text-xs uppercase tracking-widest text-ink-500 font-medium w-40">Localisation</span>
-                    <!-- MODIFIER ICI -->
-                    <span class="text-ink-900 font-medium flex items-center gap-2">
-                        <i class="fa-solid fa-location-dot text-jade-600"></i>
-                        Sousse, Tunisie
-                    </span>
-                </div>
-
-                <!-- Email -->
-                <div class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-jade-600/5 transition-colors">
-                    <span class="text-xs uppercase tracking-widest text-ink-500 font-medium w-40">Adresse Email</span>
-                    <!-- MODIFIER ICI : Mettez votre e-mail réel -->
-                    <a href="mailto:votre.email@gmail.com" class="text-jade-700 font-medium hover:underline flex items-center gap-2">
-                        <i class="fa-solid fa-envelope text-jade-600"></i>
-                        votre.email@gmail.com
-                    </a>
-                </div>
-
-                <!-- Téléphone -->
-                <div class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-jade-600/5 transition-colors">
-                    <span class="text-xs uppercase tracking-widest text-ink-500 font-medium w-40">Téléphone</span>
-                    <!-- MODIFIER ICI : Mettez votre numéro -->
-                    <a href="tel:+21600000000" class="text-jade-700 font-medium hover:underline flex items-center gap-2">
-                        <i class="fa-solid fa-phone text-jade-600"></i>
-                        +216 00 000 000
-                    </a>
-                </div>
-
-                <!-- LinkedIn -->
-                <div class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-jade-600/5 transition-colors">
-                    <span class="text-xs uppercase tracking-widest text-ink-500 font-medium w-40">LinkedIn</span>
-                    <!-- MODIFIER ICI : Mettez le lien de votre profil -->
-                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="text-jade-700 font-medium hover:underline flex items-center gap-2">
-                        <i class="fa-brands fa-linkedin text-jade-600"></i>
-                        Mon profil LinkedIn
-                    </a>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="border-t border-ink-900/10 py-8 text-center text-xs text-ink-500 tracking-wide">
-        &copy; <span id="year">2026</span> Khaled Mahjoub. Tous droits réservés.
-    </footer>
-
-    <script>
-        // Menu mobile
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-        });
-
-        // Année automatique dans le pied de page
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-</body>
-</html>
+                            <span class="text-xs uppercase tracking-widest text-clay-500 font-semibold">Stage Conducteur de Travaux</span>
+                            <h3 class="font-serif text-2xl font-bold text-ink-900">SA
